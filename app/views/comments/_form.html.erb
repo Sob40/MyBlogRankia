@@ -1,0 +1,19 @@
+
+<h2>Añade un comentario</h2>
+
+<div class="row">
+    <div class="card_comments">
+      <%= form_with(model: [ @article, @article.comments.build ], local: true) do |form| %>
+        <p>
+          <%= form.text_area :body, cols: "120", rows: "10"  %>
+        </p>
+        <p>
+          <h5><%= form.text_field :commenter %></h5>         
+        </p>
+        
+        <p>
+          <%= form.submit "Guardar" %>
+        </p>
+      <% end %>
+    </div>
+</div>

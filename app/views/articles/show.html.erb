@@ -1,0 +1,30 @@
+
+
+<div class="row">
+    <div class="centercolumn">
+      <div class="card">         
+          <div class="fakeimg">Image</div>
+          <h5>Autor: Alexandre Sargues, Dec 3, 2019</h5>
+          <p>
+            <h1><strong><%= @article.title %></strong></h1>           
+          </p>         
+          <p>
+            <%= @article.text %>
+          </p>
+      </div>       
+    </div>
+</div> 
+    <div class="row">    
+      <div class="centercolumn">   
+        <div class="card">
+        <h2>Comentarios</h2>
+          <%= render @article.comments %>     
+          <p><%= render 'comments/form' %></p>      
+          <%= link_to 'Editar', edit_article_path(@article) %> |
+          <%= link_to 'Volver', articles_path %>
+          <%= link_to 'Eliminar', article_path(@article),
+              method: :delete,
+              data: { confirm: '¿Estas seguro?' } %>
+        </div> 
+    </div>     
+</div>  

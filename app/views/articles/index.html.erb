@@ -1,0 +1,25 @@
+<h1>Blog Rankia</h1>
+
+<%= link_to 'Crear Articulo', new_article_path %>
+  <% @articles.reverse_each do |article| %>
+    <div class="row">
+      <div class="centercolumn">
+        <div class="card">
+        <h2><%= article.title %></h2>
+          <h5>Autor: Alexandre Sargues, Dec 3, 2019</h5>
+          <div class="fakeimg">Image</div>
+          <p><%= article.title %></p>
+          <p><%= article.text %></p>
+          <p class="ver"><%= link_to 'ver articulo', article_path(article) %></p>          
+        </div>
+        
+      </div> 
+      
+  </div> 
+  <% end %>    
+
+
+
+
+
+

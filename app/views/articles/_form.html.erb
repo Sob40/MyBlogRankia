@@ -1,0 +1,40 @@
+
+<!-- Por seguridad lo definimos como local. Importante definir la url para pasar los metodos por POS para mayor seguridad. 
+  Formulario basado el model del articulo (evitar redireccionamiento) <- model: @article -->
+
+
+  <div class="row">
+    <div class="card_articles">
+    <%= form_with model: @article, local: true do |form| %>
+ 
+      <% if @article.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@article.errors.count, "error") %> 
+            prohibited this article from being saved:
+          </h2>
+          <ul>
+            <% @article.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+  
+      <p>
+        <%= form.label :titulo %><br>
+        <%= form.text_field :title, size: "100x10" , placeholder: ('Titulo') %>
+      </p>
+     
+      <p>
+        <%= form.label :Articulo %><br>
+        <%= form.text_area :text, cols: "140", rows: "10", placeholder: ('Añade un articulo')  %>
+      </p>
+     
+      <p>
+        <%= form.submit "Guardar" %>
+      </p>
+      <%= link_to 'Volver', articles_path %>
+    <% end %>
+    </div>
+  </div>

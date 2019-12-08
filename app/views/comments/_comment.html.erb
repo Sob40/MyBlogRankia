@@ -1,0 +1,20 @@
+<div class="comentarios">         
+      <div class="row">
+        <div class="card_comments">
+          <p>
+            <%= comment.body %>          
+          </p>
+            <div class="user_comments">
+              <p>
+              - <%= comment.commenter %> - 
+              </p>
+            </div>
+        </div>
+      </div>
+     
+</div>
+<p>
+  <%= link_to 'Eliminar comentario', [comment.article, comment],
+               method: :delete,
+               data: { confirm: '¿Estas seguro?' } %>
+</p>
